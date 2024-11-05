@@ -58,4 +58,6 @@ public class Student {
     public void printInfo() {
         System.out.println(this);
     }
+    public String getFullName() {
+        return name + " " + surname;}
 }

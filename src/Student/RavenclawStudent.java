@@ -25,4 +25,9 @@ public class RavenclawStudent extends Student{
                 ", qualities=" + qualities +
                 '}';
     }
+
+    public Map<String, Integer> getQualities() {
+        return qualities;
+    }
+
 }

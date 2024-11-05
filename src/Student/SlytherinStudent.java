@@ -12,7 +12,7 @@ public class SlytherinStudent extends Student{
         this.qualities.put("хитрость", cunning);
         this.qualities.put("решительность", determination);
         this.qualities.put("амбициозность", ambition);
-        this.qualities.put("находчивость ", resourcefulness);
+        this.qualities.put("находчивость", resourcefulness);
         this.qualities.put("жажда власти", thirstForPower);
     }
 
@@ -25,5 +25,9 @@ public class SlytherinStudent extends Student{
                 ", transgressionDistance=" + transgressionDistance +
                 ", qualities=" + qualities +
                 '}';
+    }
+
+    public Map<String, Integer> getQualities() {
+        return qualities;
     }
 }
