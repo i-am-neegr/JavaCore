@@ -16,6 +16,13 @@ public class Main {
         RavenclawStudent student3 = new RavenclawStudent("чжау", "чонг", 4, 5, 9, 2, 3, 1);
         SlytherinStudent student4 = new SlytherinStudent("дракула", "малой", 2, 2, 2, 2, 2, 2, 4);
 
+        student1.printInfo();
+        student2.printInfo();
+        student3.printInfo();
+        student4.printInfo();
+
+        System.out.println("\n");
+
         GryffindorStudent student11 = new GryffindorStudent("героина", "рэйнджер", 9, 9, 6, 3, 2);
         HufflepuffStudent student21 = new HufflepuffStudent("серик", "дегори", 8, 4, 1, 21, 55);
         RavenclawStudent student31 = new RavenclawStudent("памада", "патил", 6,6, 3, 2, 7, 1);
@@ -32,6 +39,8 @@ public class Main {
 
         Slytherin slytherin = new Slytherin();
         slytherin.strongestSlytherinStudent(student41, student4);
+
+        System.out.println("\n");
 
         Hogwarts hogwarts = new Hogwarts();
         hogwarts.strongestStudent(student11, student2);
