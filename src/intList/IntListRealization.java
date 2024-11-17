@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class IntListRealization implements IntList {
     private int[] array;
     private int size;
-    private final int MaxSize = 256;
+    private int MaxSize = 256;
 
     public IntListRealization() {
         array = new int[MaxSize];
@@ -129,10 +129,11 @@ public class IntListRealization implements IntList {
         return Arrays.copyOf(array, size);
     }
 
-    private void swap(int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+    private static int[] swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        return arr;
     }
 
     @Override
@@ -144,7 +145,7 @@ public class IntListRealization implements IntList {
                     min = j;
                 }
             }
-            swap(i, min);
+            array = swap(array, i, min);
         }
     }
 
@@ -167,4 +168,31 @@ public class IntListRealization implements IntList {
         return -1;
     }
 
+    private static int cutting(int[] arr, int start, int end) {
+        int pivot = arr[end];
+        int i = start - 1;
+
+        for (int j = start; j < end; j++) {
+            if (pivot >= arr[j]) {
+                i++;
+
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, i + 1, end);
+        return i + 1;
+    }
+
+    public static void quickSort(int[] arr, int start, int end) {
+        if (start < end) {
+            int index = cutting(arr, start, end);
+
+            quickSort(arr, start, index - 1);
+            quickSort(arr, index + 1, end);
+        }
+    }
+
+    public void grow() {
+        MaxSize += MaxSize / 2;
+    }
 }
